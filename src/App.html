@@ -1,0 +1,32 @@
+<!-- <h1>Hello {$name}!</h1> -->
+<!-- {#each Object.entries($siteData) as [prop, val]}
+{prop} + {i}
+{:else}
+	<li>No Break Beats Available</li>
+{/each} -->
+
+{#each Object.entries($pages) as [p, data]}
+<div>
+<h3>page: {p}</h3>
+	{#each Object.entries(data) as [d, dat]}
+		<p>{d}:</p>
+		{@html dat}
+		<hr>
+	{:else}
+		<li>No Page Data Available</li>
+	{/each}
+</div>
+<hr>
+{:else}
+	<li>No Pages Available</li>
+{/each}
+
+<style>
+	h1 {
+		color: purple;
+	}
+	div {
+		margin: 3rem;
+		padding: 3rem;
+	}
+</style>
